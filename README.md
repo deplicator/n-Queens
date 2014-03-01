@@ -7,7 +7,7 @@ COMP3053 Analysis of Algorithms
 
 Description
 -----------
-Displays a text based board for all solutions to the [n-queens problem][1].
+Displays a text board for all solutions to the [n-queens problem][1].
 
 
 Assignment
@@ -34,37 +34,39 @@ Assignment
         END IF
 
 ### Solution
-This is the basic algorithm, there will of course, need to be more. For starters another function
-for `this spot cannot be attacked by an existing queen`. This implementation makes use of the fact
-each row must have a queen. If all the spots in the next row are attackable by an existing queen
-the `FOR size of the game board` loop will try the next spot in the previous row.
+This is the basic algorithm, there will need to be more. For starters another function for 
+`this spot cannot be attacked by an existing queen`. This implementation makes use of the fact each 
+row must have a queen. If all the spots in the next row are attackable by an existing queen the 
+`FOR size of the game board` loop will try the next spot in the previous row.
 
 For this project I did study the [solutions][2] [implemented][3] [by][4] [others][5]. In doing so I
-realized how easy it was to alter my function that returns the solution of one board into one that
+realized how easy it was to alter my function that returns the one solution into a function that
 returns all solutions. Moving to user inputted nxn instead of 8x8 was trivial (compared to the time 
 I'm ashamed to admit it took me to figure out the solution logic). With further tweaking I came to 
 realize the game board can be represented by a single dimension array by using the index as columns.
 
-I moved to a class structure to make use of class-wide variables, also I feel passing arrays into
+I moved to a class structure to make use of class-wide variables, and I feel passing arrays into
 functions to be a messy process in C++. This is also the first program I've written to make use of a
-`makefile`, albeit it is not necessary in the least.
+`makefile`, albeit it is overkill.
 
 ### Implementation
-It can be compiled with the `makefile`, just type;
-
+It can be cloned from git and compiled with the `makefile`, just type;
+    
+    git clone https://github.com/deplicator/n-Queens
+    cd n-Queens
     make
     
-by compiling with g++;
+alternative to make is to compile with g++;
 
-    g++ main.cpp nQueen.cpp -o queens
+    g++ main.cpp nQueen.cpp -o queens.exe
     
-or by copying and pasting `main.cpp`, `nQueens.cpp`, and `nQueens.h` into Visual Studios (this has
+or `main.cpp`, `nQueens.cpp`, and `nQueens.h` can be copied and pasted into Visual Studios (this has
 been tested in Visual Studios 2010).
 
 Default execution will display all solutions for an 8x8 game board. Appending a number behind the 
 execution command will display all solutions for nxn board. For example:
 
-    queens.exe 10
+    ./queens.exe 10
 
 Will return the 724 solutions for a 10x10 board. The program has only been tested to 13x13; expect 
 results of higher n's take several minutes. It should be noted there is little data validation on 
@@ -72,9 +74,9 @@ this. The program will not allow for numbers higher than 26 (alphabetical displa
 anything other than numbers will yield unexpected results.
 
 It can be beneficial to send the output to a text file. The output is bulky (some examples in 
-[git repository][git]), running the program with an n of 13 will yield a 130 MB file.
+[git repository][git]), running the program with an n of 13 will yield a ~130 MB file.
 
-    queens 9.exe > results.txt
+    ./queens 9.exe > results.txt
 
 | n  | distinct results | output size  | estimated time** |
 |:--:|-----------------:|-------------:|-----------------:|
