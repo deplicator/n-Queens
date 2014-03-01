@@ -49,7 +49,7 @@ functions to be a messy process in C++. This is also the first program I've writ
 
 
 ### Implementation
-It can be compiled with the `makefile` just type;
+It can be compiled with the `makefile`, just type;
 
     make
     
@@ -63,7 +63,7 @@ been tested in Visual Studios 2010).
 Default execution will display all solutions for an 8x8 game board. Appending a number behind the 
 execution command will display all solutions for nxn board. For example:
 
-    queens 10
+    queens.exe 10
 
 Will return the 724 solutions for a 10x10 board. The program has only been tested to 13x13;
 expect the results to take several minutes at anything larger. It should be noted there is no data
@@ -72,7 +72,7 @@ validation on this, anything other than numbers will yield unexpected results.
 It can be beneficial to send the output to a text file. The output is bulky, running the program 
 with an n of 13 will yield a 130 MB file.
 
-    queens 9 > results.txt
+    queens 9.exe > results.txt
 
 | n  | distinct results | output size  |  estimated time* |
 |---:|-----------------:|-------------:|-----------------:|

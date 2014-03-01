@@ -9,8 +9,6 @@
 #include <iostream>
 #include "nQueen.h"
 
-using namespace std;
-
 nQueen::nQueen(int n) {
     size = n;
     board = new int[size];
@@ -35,7 +33,7 @@ bool nQueen::attackable(int column, int row) {
     for (int i = 0; i < column; i++) {
         if (board[i] == row || board[i] == row - (column - i) || board[i] == row + (column - i)) {
         //if(board[i] == board[column] || abs(board[column]-board[i]) == column - i) {
-        //never could get this to work, requires cmath.
+        //never could get this idea to work, requires cmath.
             return true;
         }
     }
@@ -44,11 +42,11 @@ bool nQueen::attackable(int column, int row) {
  
 void nQueen::solve(int x) {
     if (x == size) {
-        cout << endl << "  Solution " << ++solutions << endl;
+        std::cout << std::endl << "  Solution " << ++solutions << std::endl;
         if(solutions < 10) {
-            cout << "  ----------" << endl;
+            std::cout << "  ----------" << std::endl;
         } else {
-            cout << "  -----------" << endl;
+            std::cout << "  -----------" << std::endl;
         }
         printPretty();
     } else {
@@ -63,12 +61,12 @@ void nQueen::solve(int x) {
 
 void nQueen::printQueenCoords() {
     int letter;
-    cout << "  Queen Coordinates = {";
+    std::cout << "  Queen Coordinates = {";
     for(int i = 0; i < size; i++) {
         if(i < size-1) {
-            cout << "(" << i+1 << ", " << letters[board[i]] << "), ";
+            std::cout << "(" << i+1 << ", " << letters[board[i]] << "), ";
         } else {
-            cout << "(" << i+1 << ", " << letters[board[i]] << ")}" << endl << endl;
+            std::cout << "(" << i+1 << ", " << letters[board[i]] << ")}" << std::endl << std::endl;
         }
     }
 }
@@ -78,47 +76,47 @@ void nQueen::printQueenCoords() {
  */
 void nQueen::printPretty() {
     //column marker across top
-    cout << endl << "    ";
+    std::cout << std::endl << "    ";
     for(int i = 0; i < size; i++) {
-        cout << "  " << letters[i] << " ";
+        std::cout << "  " << letters[i] << " ";
     }
     
     //top of board
-    cout << endl << "    +";
+    std::cout << std::endl << "    +";
     for(int i = 0; i < size; i++) {
-        cout << "---+";
+        std::cout << "---+";
     }
     
     //for each row
     for(int i = 0; i < size; i++) {
         //row marker on left
         if(i < 9) {
-            cout << endl << "  " << i+1 << " | ";
+            std::cout << std::endl << "  " << i+1 << " | ";
         } else {
-            cout << endl << " " << i+1 << " | ";
+            std::cout << std::endl << " " << i+1 << " | ";
         }
         
         //board contents
         for(int j = 0; j < size; j++) {
             if(board[i] == j) {
                 if(j < 9) {
-                    cout << board[i]+1 << " | ";
+                    std::cout << board[i]+1 << " | ";
                 } else if(j < 99) {
-                    cout << board[i]+1 << "| ";
+                    std::cout << board[i]+1 << "| ";
                 } else {
-                    cout << board[i]+1 << "|"; //doubt we'll ever need this.
+                    std::cout << board[i]+1 << "|"; //doubt we'll ever need this.
                 }
             } else {
-                cout << "0 | ";
+                std::cout << "0 | ";
             }
         }
         
         //line between contents
-        cout << endl << "    +";
+        std::cout << std::endl << "    +";
         for(int k = 0; k < size; k++) {
-            cout << "---+";
+            std::cout << "---+";
         }
     }
-    cout << endl <<  endl;
+    std::cout << std::endl <<  std::endl;
     printQueenCoords();
 }
