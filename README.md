@@ -107,7 +107,7 @@ It can be beneficial to send the output to a text file. The output is bulky (som
 
 ### Future Development
 I thought it would be nice to add more command line switches that tweak the output. An option to 
-return only the queen coordinates, instead and an entire board, should reduce the output size. Also,
+return only the queen coordinates, instead of an entire board, should reduce the output size. Also,
 an option to change to coordinate system to use only numbers instead of the chessboard number/letter
 standard it outputs now. No doubt there is plenty of room for efficiency improvement.
 
