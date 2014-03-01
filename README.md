@@ -68,7 +68,7 @@ execution command will display all solutions for nxn board. For example:
 
     ./queens.exe 10
 
-Will return the 724 solutions for a 10x10 board. The program has only been tested to 13x13; expect 
+Will return the 724 solutions for a 10x10 board. The program has only been tested to 14x14; expect 
 results of higher n's take several minutes. It should be noted there is little data validation on 
 this. The program will not allow for numbers higher than 26 (alphabetical display limitations) and 
 anything other than numbers will yield unexpected results.
