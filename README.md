@@ -78,7 +78,7 @@ It can be beneficial to send the output to a text file. The output is bulky (som
 
     ./queens 9.exe > results.txt
 
-| n  | distinct results | output size  | estimated time** |
+| n  | distinct results | output size  | estimated time\* |
 |:--:|-----------------:|-------------:|-----------------:|
 |  1 |                1 |    139 bytes |        0 seconds |
 |  2 |                0 |              |                  |
@@ -99,11 +99,11 @@ It can be beneficial to send the output to a text file. The output is bulky (som
 | 17 |       95,815,104 |              |                  |
 | 18 |      666,090,624 |              |                  |
 | 19 |    4,968,057,848 |              |                  |
-| 20 |   39,029,188,884 | over 20GB*** | tired of waiting |
+| 20 |   39,029,188,884 | over 20GB\** | tired of waiting |
 
- **  Output time in result text file running in an Ubuntu 13.10 virtual machine on an Intel Corei7.
+ \*  Output time in result text file running in an Ubuntu 13.10 virtual machine on an Intel Corei7.
      Results in terminal will take longer.  
- *** Stopped test, was taking too long and too much space.
+ \** Stopped test, was taking too long and too much space.
 
 ### Future Development
 I thought it would be nice to add more command line switches that tweak the output. An option to 
