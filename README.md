@@ -47,7 +47,6 @@ I moved to a class structure to make use of class-wide variables, also I feel pa
 functions to be a messy process in C++. This is also the first program I've written to make use of a
 `makefile`, albeit it is not necessary in the least.
 
-
 ### Implementation
 It can be compiled with the `makefile`, just type;
 
@@ -74,8 +73,8 @@ with an n of 13 will yield a 130 MB file.
 
     queens 9.exe > results.txt
 
-| n  | distinct results | output size  |  estimated time* |
-|---:|-----------------:|-------------:|-----------------:|
+| n  | distinct results | output size  | estimated time** |
+|:--:|-----------------:|-------------:|-----------------:|
 |  1 |                1 |    139 bytes |        0 seconds |
 |  2 |                0 |              |                  |
 |  3 |                0 |              |                  |
@@ -95,11 +94,11 @@ with an n of 13 will yield a 130 MB file.
 | 17 |       95,815,104 |              |                  |
 | 18 |      666,090,624 |              |                  |
 | 19 |    4,968,057,848 |              |                  |
-| 20 |   39,029,188,884 |  over 20GB** | tired of waiting |
+| 20 |   39,029,188,884 | over 20GB*** | tired of waiting |
 
- *  Output time in result text file running in an Ubuntu 13.10 virtual machine on an Intel Corei7.
-    Results in terminal will take longer.
- ** Stopped test, was taking too long and too much space.
+ **  Output time in result text file running in an Ubuntu 13.10 virtual machine on an Intel Corei7.
+     Results in terminal will take longer.
+ *** Stopped test, was taking too long and too much space.
 
 
 [1]: http://en.wikipedia.org/wiki/Eight_queens_puzzle
