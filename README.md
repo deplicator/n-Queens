@@ -12,7 +12,6 @@ Displays a text based board for all solutions to the [n-queens problem][1].
 
 Assignment
 ----------
-
 ### Problem
 > The 8-queens puzzle is the problem of placing 8 queens on an 8×8 chessboard such that no two 
 > queens attack each other. There are multiple solutions and the following is one solution to the 
@@ -102,6 +101,26 @@ It can be beneficial to send the output to a text file. The output is bulky (som
  **  Output time in result text file running in an Ubuntu 13.10 virtual machine on an Intel Corei7.
      Results in terminal will take longer.
  *** Stopped test, was taking too long and too much space.
+
+### Interesting Notes
+I included the timing results to make it a bit more interesting, but discovered running in Ubuntu 
+versus Windows to yield different results. This is not surprising, but I did find it curious running
+in the Linux terminal and outputting to a file from Linux gave the same (or at least very close to)
+amount of time passed.
+
+It was also very obvious in Linux the time displayed was not how long it took the terminal to 
+display the results. For example, running queen 12x12 in the terminal showed 0.94 seconds to 
+complete, but I observed it taking several seconds to complete. My theory is the computations are 
+finished in 0.94 seconds, but it takes longer to print 14 thousand boards.
+
+Under Windows, running an 8x8 solution would take 2.587 seconds in the command window. Outputting 
+the result to a file showed it took 0.023 seconds. This leads me to believe (but by no means is 
+conclusive), Windows takes into account the time to display results but runs about the same as 
+Linux.
+
+This is anecdotal; there are several factors not taken into consideration. No less interesting 
+though.
+
 
 
 [git]: https://github.com/deplicator/n-Queens
