@@ -19,6 +19,10 @@ int main(int argc, char** argv){
     int n;
     if(argv[1] != NULL) {
         n = atoi(argv[1]);
+        if(n > 27) {
+            cout << "Try a number less than 20." << endl;
+            return 0;
+        }
     } else {
         n = 8;
     }

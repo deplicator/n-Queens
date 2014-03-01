@@ -60,7 +60,7 @@ bool nQueen::attackable(int column, int row) {
 }
 
 /**
- * Recursively solves the queen placement one row at a time for the board size given by the user.
+ * Recursively solves the queen placement one row at a time for board size.
  * 
  * @param x integer     Column controlled by the recursion.
  */
@@ -100,7 +100,9 @@ void nQueen::printQueenCoords() {
 }
 
 /**
- * Print whole game board, makes for giant files when text output is saved.
+ * Print whole game board, makes for giant files when text output is saved. The standard chessboard
+ * letter and number coordinate system is used, it is doubtful anyone will ever solve 27x27 or 
+ * higher.
  */
 void nQueen::printPretty() {
     //column marker across top

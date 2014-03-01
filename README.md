@@ -67,7 +67,8 @@ execution command will display all solutions for nxn board. For example:
     queens.exe 10
 
 Will return the 724 solutions for a 10x10 board. The program has only been tested to 13x13; expect 
-results of higher n's take several minutes. It should be noted there is no data validation on this,
+results of higher n's take several minutes. It should be noted there is little data validation on 
+this. The program will not allow for numbers higher than 26 (alphabetical display limitations) and 
 anything other than numbers will yield unexpected results.
 
 It can be beneficial to send the output to a text file. The output is bulky (some examples in 
