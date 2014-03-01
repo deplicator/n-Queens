@@ -99,7 +99,7 @@ It can be beneficial to send the output to a text file. The output is bulky (som
 | 20 |   39,029,188,884 | over 20GB*** | tired of waiting |
 
  **  Output time in result text file running in an Ubuntu 13.10 virtual machine on an Intel Corei7.
-     Results in terminal will take longer.
+     Results in terminal will take longer.  
  *** Stopped test, was taking too long and too much space.
 
 ### Interesting Notes
@@ -120,7 +120,6 @@ Linux.
 
 This is anecdotal; there are several factors not taken into consideration. No less interesting 
 though.
-
 
 
 [git]: https://github.com/deplicator/n-Queens
