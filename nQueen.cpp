@@ -9,37 +9,61 @@
 #include <iostream>
 #include "nQueen.h"
 
+/**
+ * Constructor
+ */
 nQueen::nQueen(int n) {
+    // Set up game board variables.
     size = n;
     board = new int[size];
+    for(int i = 0; i < size; i++) {
+        board[i] = 0;
+    }
 
+    // Initialize letters array, could't come up with a better way to do this.
     char temp[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
                    'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
     for(int i = 0; i < 26; i++) {
         letters[i] = temp[i];
     }
     
+    // No solutions yet.
     solutions = 0;
-    for(int i = 0; i < size; i++) {
-        board[i] = 0;
-    }
 }
 
+/**
+ * Destructor
+ */
 nQueen::~nQueen() {
     delete board;
 }
- 
+
+/**
+ * Determines if a position is attackable by a queen already placed. The function only needs to
+ * detect attacks from queens in rows above. Left and right is taken care of by the solve function, 
+ * only checking a single row at a time.
+ * I thought it would be slick to have an if condition for the up direction and another for 
+ * diagonals, but I could not get the diagonal detection to work without using two if conditions.
+ * 
+ * @param column integer    The x-coordinate of spot to check.
+ * @param row    integer    The y-coordinate of spot to check.
+ */
 bool nQueen::attackable(int column, int row) {
     for (int i = 0; i < column; i++) {
+        //  strait above       negative slope, above             positive slope, above
         if (board[i] == row || board[i] == row - (column - i) || board[i] == row + (column - i)) {
-        //if(board[i] == board[column] || abs(board[column]-board[i]) == column - i) {
-        //never could get this idea to work, requires cmath.
+        /* if(board[i] == board[column] || abs(board[column]-board[i]) == column - i) { */
             return true;
         }
     }
     return false;
 }
- 
+
+/**
+ * Recursively solves the queen placement one row at a time for the board size given by the user.
+ * 
+ * @param x integer     Column controlled by the recursion.
+ */
 void nQueen::solve(int x) {
     if (x == size) {
         std::cout << std::endl << "  Solution " << ++solutions << std::endl;
@@ -50,6 +74,7 @@ void nQueen::solve(int x) {
         }
         printPretty();
     } else {
+        // x represents the column, i represents the row
         for (int i = 0; i < size; i++) {
             if (!attackable(x, i)) {
                 board[x] = i;
@@ -59,8 +84,11 @@ void nQueen::solve(int x) {
     }
 }
 
+/**
+ * Prints a set of human readable coordinates for queen locations. Used at the end of prettyPrint(),
+ * but could be useful for implementing a smaller, but still easy to read, output.
+ */
 void nQueen::printQueenCoords() {
-    int letter;
     std::cout << "  Queen Coordinates = {";
     for(int i = 0; i < size; i++) {
         if(i < size-1) {
@@ -72,7 +100,7 @@ void nQueen::printQueenCoords() {
 }
 
 /**
- * Print whole game board.
+ * Print whole game board, makes for giant files when text output is saved.
  */
 void nQueen::printPretty() {
     //column marker across top

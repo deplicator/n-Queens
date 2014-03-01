@@ -41,7 +41,8 @@ the `FOR size of the game board` loop will try the next spot in the previous row
 For this project I did study the [solutions][2] [implemented][3] [by][4] [others][5]. In doing so I
 realized how easy it was to alter my function that returns the solution of one board into one that
 returns all solutions. Moving to user inputted nxn instead of 8x8 was trivial (compared to the time 
-I'm ashamed to admit it took me to figure out the solution logic).
+I'm ashamed to admit it took me to figure out the solution logic). With further tweaking I came to 
+realize the game board can be represented by a single dimension array by using the index as columns.
 
 I moved to a class structure to make use of class-wide variables, also I feel passing arrays into
 functions to be a messy process in C++. This is also the first program I've written to make use of a
