@@ -27,7 +27,7 @@ Assignment
             FOR size of the game board
                 IF this spot cannot be attacked by an existing queen THEN
                     place a queen here
-                    solve(index + 1);
+                    do some recursion, solve(index + 1) 
                 END IF
             END FOR
         END IF
@@ -39,19 +39,31 @@ each row must have a queen. If all the spots in the next row are attackable by a
 the `FOR size of the game board` loop will try the next spot in the previous row.
 
 For this project I did study the [solutions][2] [implemented][3] [by][4] [others][5]. In doing so I
-realized how easy it was to make my function that returns the solution to one board into a function
-that returns all the solutions. Moving to user inputted nxn instead of 8x8 was trivial (compared to 
-the time I'm ashamed to admit it took me to figure out the solution logic).
+realized how easy it was to alter my function that returns the solution of one board into one that
+returns all solutions. Moving to user inputted nxn instead of 8x8 was trivial (compared to the time 
+I'm ashamed to admit it took me to figure out the solution logic).
 
 I moved to a class structure to make use of class-wide variables, also I feel passing arrays into
-functions to be a messy process in C++.
+functions to be a messy process in C++. This is also the first program I've written to make use of a
+`makefile`, albeit it is not necessary in the least.
 
 
 ### Implementation
+It can be compiled with the `makefile` just type;
+
+    make
+    
+by compiling with g++;
+
+    g++ main.cpp nQueen.cpp -o queens
+    
+or by copying and pasting `main.cpp`, `nQueens.cpp`, and `nQueens.h` into Visual Studios (this has
+been tested in Visual Studios 2010).
+
 Default execution will display all solutions for an 8x8 game board. Appending a number behind the 
 execution command will display all solutions for nxn board. For example:
 
-    queens.exe 10
+    queens 10
 
 Will return the 724 solutions for a 10x10 board. The program has only been tested to 13x13;
 expect the results to take several minutes at anything larger. It should be noted there is no data
@@ -60,7 +72,7 @@ validation on this, anything other than numbers will yield unexpected results.
 It can be beneficial to send the output to a text file. The output is bulky, running the program 
 with an n of 13 will yield a 130 MB file.
 
-    queens.exe 9 > results.txt
+    queens 9 > results.txt
 
 | n  | distinct results | output size  |  estimated time* |
 |---:|-----------------:|-------------:|-----------------:|
