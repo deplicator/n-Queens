@@ -3,6 +3,8 @@ Homework #2 - Eight Queens
 James Pryor  
 COMP3053 Analysis of Algorithms  
 
+[github.com/deplicator/n-Queens][git]
+
 Description
 -----------
 Displays a text based board for all solutions to the [n-queens problem][1].
@@ -65,12 +67,12 @@ execution command will display all solutions for nxn board. For example:
 
     queens.exe 10
 
-Will return the 724 solutions for a 10x10 board. The program has only been tested to 13x13;
-expect the results to take several minutes at anything larger. It should be noted there is no data
-validation on this, anything other than numbers will yield unexpected results.
+Will return the 724 solutions for a 10x10 board. The program has only been tested to 13x13; expect 
+results of higher n's take several minutes. It should be noted there is no data validation on this,
+anything other than numbers will yield unexpected results.
 
-It can be beneficial to send the output to a text file. The output is bulky, running the program 
-with an n of 13 will yield a 130 MB file.
+It can be beneficial to send the output to a text file. The output is bulky (some examples in 
+[git repository][git]), running the program with an n of 13 will yield a 130 MB file.
 
     queens 9.exe > results.txt
 
@@ -102,6 +104,7 @@ with an n of 13 will yield a 130 MB file.
  *** Stopped test, was taking too long and too much space.
 
 
+[git]: https://github.com/deplicator/n-Queens
 [1]: http://en.wikipedia.org/wiki/Eight_queens_puzzle
 [2]: http://jsomers.com/nqueen_demo/nqueens.html
 [3]: http://www.geeksforgeeks.org/backtracking-set-3-n-queen-problem/
