@@ -93,7 +93,7 @@ It can be beneficial to send the output to a text file. The output is bulky (som
 | 11 |            2,680 |       3.6 MB |     0.23 seconds |
 | 12 |           14,200 |      22.4 MB |     0.94 seconds |
 | 13 |           73,712 |     133.0 MB |     6.36 seconds |
-| 14 |          365,596 |              |                  |
+| 14 |          365,596 |     749.0 MB |    38.83 seconds |
 | 15 |        2,279,184 |              |                  |
 | 16 |       14,772,512 |              |                  |
 | 17 |       95,815,104 |              |                  |
@@ -105,24 +105,30 @@ It can be beneficial to send the output to a text file. The output is bulky (som
      Results in terminal will take longer.  
  *** Stopped test, was taking too long and too much space.
 
-### Interesting Notes
-I included the timing results to make it a bit more interesting, but discovered running in Ubuntu 
-versus Windows to yield different results. This is not surprising, but I did find it curious running
-in the Linux terminal and outputting to a file from Linux gave the same (or at least very close to)
-amount of time passed.
+### Future Development
+I thought it would be nice to add more command line switches that tweak the output. An option to 
+return only the queen coordinates, instead and an entire board, should reduce the output size. Also,
+an option to change to coordinate system to use only numbers instead of the chessboard number/letter
+standard it outputs now. No doubt there is plenty of room for efficiency improvement.
 
-It was also very obvious in Linux the time displayed was not how long it took the terminal to 
-display the results. For example, running queen 12x12 in the terminal showed 0.94 seconds to 
-complete, but I observed it taking several seconds to complete. My theory is the computations are 
-finished in 0.94 seconds, but it takes longer to print 14 thousand boards.
+### Interesting Notes
+I included the timing results to make it more interesting, but discovered a notable difference 
+between Linux versus Windows.
+
+Running in Linux gave the same (or at least very close to) amount of time passed for running in a 
+terminal or outputting to a file. It was also very obvious in the Linux terminal the time displayed 
+was not how long it took the terminal to display the results. For example, running queen 12x12 in 
+the terminal showed 0.94 seconds to complete, but I observed it taking several seconds to complete. 
+My theory is the computations are finished in 0.94 seconds, but it takes longer to print 14 thousand
+text boards.
 
 Under Windows, running an 8x8 solution would take 2.587 seconds in the command window. Outputting 
 the result to a file showed it took 0.023 seconds. This leads me to believe (but by no means is 
 conclusive), Windows takes into account the time to display results but runs about the same as 
 Linux.
 
-This is anecdotal; there are several factors not taken into consideration. No less interesting 
-though.
+This is anecdotal; there are several factors not taken into consideration, but still no less
+interesting.
 
 
 [git]: https://github.com/deplicator/n-Queens
